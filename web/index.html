@@ -13,28 +13,23 @@ and open the template in the editor.
         <form method="post" action="Servlet">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                    <td>Введите текст:</td>
-                    <td><input type="text" name="enteredValue"/></td>
-                    </tr>
-                    <tr>
-                    <td><input name="options" type="checkbox" value="option1"/>
-                        Вариант 1</td>
-                    </tr>
-                <tr>
-                    
-                    <td><input name="options" type="checkbox" value="option2"/>
-                        Вариант 2</td>
-                    </tr>    
-                <tr>
-                    
-                    <td><input name="options" type="checkbox" value="option3"/>
-                        Вариант 3</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="submit" value="Submit">
+                    <td>Посмотреть таблицу Студенты:&nbsp;</td>
+                    <td><input type="submit"  value="View Studentyi">
                             </td>
-                            </tr>
+                    </tr>
+                    
+                  
+            </table>
+            </br>
+            </form>
+        <form method="get" action="ListGruppServlet">
+            <table cellpadding="0" cellspacing="0" border="0">
+             <tr>
+                 <td>Посмотреть таблицу Группы:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><input type="submit" value="View Gruppyi">
+                            </td>
+                    </tr>
+                   
             </table>
             </form>
     </body>
