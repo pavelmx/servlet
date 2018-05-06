@@ -5,22 +5,27 @@
  */
 
 
-import services.ServicesBean;
+
 import entity.Gruppyi;
 import entity.Studentyi;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import services.BeanLocal;
 
 /**
  *
  * @author павел
  */
 public class Servlet2 extends HttpServlet {
+    
+    
+    @EJB BeanLocal b;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
                throws ServletException, IOException {
@@ -33,9 +38,9 @@ public class Servlet2 extends HttpServlet {
      
         try{
             
-            ServicesBean en =new ServicesBean();
-            List<Gruppyi> gr=en.PrintGrupp();
-            List<Studentyi> st=en.PrintStud();
+            
+            List<Gruppyi> gr=b.PrintGrupp();
+            
              
             
             out.println("<!DOCTYPE html>");

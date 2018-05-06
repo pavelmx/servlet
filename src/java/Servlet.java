@@ -1,10 +1,11 @@
 
-import services.ServicesBean;
+
 import entity.Gruppyi;
 import entity.Studentyi;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Init;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import services.BeanLocal;
 
 /**
  *
@@ -21,6 +23,8 @@ import org.hibernate.Transaction;
  */
 public class Servlet extends HttpServlet {
 
+    @EJB BeanLocal b;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=windows-1251");
@@ -32,9 +36,9 @@ public class Servlet extends HttpServlet {
      
         try{
             
-            ServicesBean en =new ServicesBean();
-            List<Gruppyi> gr=en.PrintGrupp();
-            List<Studentyi> st=en.PrintStud();
+            
+            List<Gruppyi> gr=b.PrintGrupp();
+            List<Studentyi> st=b.PrintGrupp();
            // List<Studentyi> delst=en.Delete();
             
             out.println("<!DOCTYPE html>");

@@ -31,10 +31,10 @@
              <td>${gr.status}</td>
              <td>${gr.statusDate}</td>
              <td>
-             <a href="editProduct?code=${gr.shifr}">Edit</a>
+             <a href="editProduct?shifr=${gr.shifr}">Edit</a>
              </td>
              <td>
-                <a href="deleteProduct?code=${gr.shifr}">Delete</a>
+                <a href="GruppDelete?shifr=${gr.shifr}">Delete</a>
              </td>
           </tr>
        </c:forEach>
